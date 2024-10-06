@@ -1,0 +1,325 @@
+/* Global Styles */
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Ensure text is visible */
+    overflow-x: hidden;
+    transition: margin-left 0.3s ease;
+}
+
+/* Overlay to dim the content when the panel is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50; /* Below sidenav but above content */
+    display: none; /* Hidden by default */
+    transition: 0.3s ease;
+}
+
+/* Show the overlay when the side panel is open */
+body.panel-open .overlay {
+    display: block;
+}
+
+/* Header and Navigation */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100; /* Ensure it's above the rest of the content */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+}
+
+.menu-icon.hidden {
+    display: none;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+}
+
+header .social-icons {
+    position: absolute;
+    right: 80px;
+    top: 20px;
+    font-size: 30px;
+    color: white;
+    transition: color 0.3s;
+}
+
+header .social-icons a {
+    margin-left: 15px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+header .social-icons a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 450px;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    color: white;
+    z-index: 2;
+    margin-top: 90px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 18px;
+    max-width: 700px;
+    margin-top: 30px;
+}
+
+/* Categories Section */
+.categories {
+    z-index: 2;
+    margin-top: 10px;
+    background-color: black;
+    padding: 20px 0;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.categories li {
+    margin: 10px;
+}
+
+.categories a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.categories a.active,
+.categories a:hover {
+    background-color: white;
+    color: black;
+    font-size: larger;
+}
+
+/* Gallery */
+.main1 {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+/* Shift the body content to the right when the side panel opens */
+body.panel-open .hero-text,
+body.panel-open .categories,
+body.panel-open .main1,
+body.panel-open .footer {
+    margin-left: 250px; /* Adjust based on your panel width */
+    transition: margin-left 0.3s ease;
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media screen and (min-width: 992px) {
+    .hero-text h1 {
+        font-size: 48px;
+    }
+    .gallery {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .sidenav a {
+        font-size: 20px;
+    }
+    header .social-icons {
+        right: 40px;
+    }
+}
+
+/* Small screens (mobiles) */
+@media screen and (max-width: 767px) {
+    .hero {
+        height: 300px;
+    }
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    .hero-text p {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    header {
+        top: 10px;
+        left: 20px;
+    }
+    .menu-icon {
+        font-size: 24px;
+    }
+    .sidenav {
+        width: 80%; /* Slide panel takes 80% width on mobile */
+    }
+    .sidenav a {
+        font-size: 18px;
+        padding: 8px 8px 8px 20px;
+    }
+    .header .social-icons {
+        font-size: 24px;
+        right: 20px;
+    }
+    .categories ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-item img {
+        height: auto;
+    }
+    .footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .social-icons {
+        font-size: 20px; /* Reduce social icon size */
+    }
+}

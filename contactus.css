@@ -1,0 +1,210 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: black;
+    margin: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+}
+
+.menu-icon.hidden {
+    display: none;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer { 
+    text-align: center; 
+    padding: 20px; 
+    background-color: black; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; /* White footer text */
+}
+
+.container {
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e; /* Added background for the container */
+    color: #e0e0e0; /* Ensure text color is visible against background */
+}
+
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #666;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', cursive;
+}
+
+.contact-form h2 {
+    margin-bottom: 25px;
+    color: white;
+    font-size: 32px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Cinzel', serif;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+    transition: background-color 0.3s ease;
+    border-color: white;
+}
+
+.contact-form button:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#success-message {
+    color: green;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    header .social-icons {
+        position: static; /* Make social icons static */
+        margin-top: 10px; /* Add some space above */
+    }
+
+    .contact-form {
+        max-width: 90%; /* Adjust form width on smaller screens */
+    }
+
+    .contact-form h2 {
+        font-size: 28px; /* Adjust title size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 20px; /* Reduce padding for mobile */
+    }
+
+    .contact-form h2 {
+        font-size: 24px; /* Further adjust title size for mobile */
+    }
+
+    .contact-form label {
+        font-size: 16px; /* Adjust label size */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px; /* Adjust input/textarea font size */
+    }
+
+    .contact-form button {
+        font-size: 14px; /* Adjust button font size */
+    }
+}

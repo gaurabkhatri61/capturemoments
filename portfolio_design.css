@@ -1,0 +1,200 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #1e1e1e;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+}
+
+.menu-icon.hidden {
+    display: none;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+}
+
+
+/* Photographers Section */
+.Photographers {
+    position: relative;
+    height: 150px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Photographers .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add transparency */
+}
+
+.Photographers-text {
+    color: rgba(255, 255, 255, 0.905);
+    z-index: 2;
+    margin-top: 0;
+}
+
+.Photographers-text h1 {
+    font-size: 40px;
+    margin: 30px 0 0; /* Simplified margin */
+}
+
+/* Profile Cards Section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: black;
+    width: calc(60%); /*Adjust width */
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.profile-card:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.image-container {
+    display: flex;
+    justify-content: left;
+    height: 300px;
+}
+
+.name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.skills, .experience, .description {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.skills {
+    font-weight: bold;
+}
+
+.experience {
+    font-style: italic;
+}
+
+.description {
+    color: white;
+}
+
+.footer { 
+    text-align: center; 
+    padding: 20px; 
+    background-color: black; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; /* White footer text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    header .social-icons {
+        position: static; /* Make social icons static */
+        margin-top: 10px; /* Add some space above */
+    }
+
+    .profile-card {
+        width: calc(50% - 40px); /* Adjust to 50% on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        width: calc(100% - 40px); /* Full width on mobile */
+    }
+
+    .Photographers-text h1 {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .Photographers {
+        height: auto; /* Adjust height for better visibility */
+    }
+}
